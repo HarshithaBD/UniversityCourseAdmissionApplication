@@ -76,7 +76,9 @@ import com.mts.service.IAdmissionCommiteeMemberService;
 				return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
 			}
 			
-		}//view all commitee
+		}
+		
+    
 		@GetMapping("/viewAllCommitee")
 		public ResponseEntity<List<AdmissionCommiteeMemberDto>>viewCommiteeMembers(){
 			List<AdmissionCommiteeMemberDto> lst=service.viewAllCommiteeMembers();

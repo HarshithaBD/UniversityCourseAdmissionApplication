@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
          return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
-	@ExceptionHandler(ApplicantNotFoundException.class)
+	@ExceptionHandler(LoginFailedException.class)
     public ResponseEntity<?> resourceNotFoundException(LoginFailedException ex, WebRequest request) 
 	{
          ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
          return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 	
-	@ExceptionHandler(ApplicantNotFoundException.class)
+	@ExceptionHandler(StaffMemberNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(StaffMemberNotFoundException  ex, WebRequest request) 
 	{
          ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
          return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 	
-	@ExceptionHandler(ApplicantNotFoundException.class)
+	@ExceptionHandler(CourseNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(CourseNotFoundException ex, WebRequest request) 
 	{
          ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
          return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 	
-	@ExceptionHandler(ApplicantNotFoundException.class)
+	@ExceptionHandler(AdmissionNotGrantedException.class)
     public ResponseEntity<?> resourceNotFoundException(AdmissionNotGrantedException ex, WebRequest request) 
 	{
          ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
@@ -51,7 +51,7 @@ public class GlobalExceptionHandler {
          return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
     
-	@ExceptionHandler(ApplicantNotFoundException.class)
+	@ExceptionHandler(AdmissionMemNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException(AdmissionMemNotFoundException ex, WebRequest request) 
 	{
          ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));

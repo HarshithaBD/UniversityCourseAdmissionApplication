@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mts.DTO.StaffMemberDto;
+import com.mts.dto.StaffMemberDto;
 import com.mts.entity.Course;
 import com.mts.entity.UniversityStaffMember;
 import com.mts.exception.CourseNotFoundException;

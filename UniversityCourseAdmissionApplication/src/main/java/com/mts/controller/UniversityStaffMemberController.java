@@ -13,9 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
+import com.mts.DTO.StaffMemberDto;
+=======
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mts.DTO.StaffMemberDto;
+import com.mts.dto.StaffMemberDto;
+>>>>>>> branch 'master' of https://github.com/HarshithaBD/UniversityCourseAdmissionApplication.git
 import com.mts.entity.Course;
 import com.mts.entity.UniversityStaffMember;
 import com.mts.exception.CourseNotFoundException;

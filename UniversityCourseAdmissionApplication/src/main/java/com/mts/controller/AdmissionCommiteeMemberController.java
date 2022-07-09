@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mts.DTO.AdmissionCommiteeMemberDto;
+import com.mts.dto.AdmissionCommiteeMemberDto;
 import com.mts.entity.AdmissionCommiteeMember;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
@@ -31,7 +31,6 @@ import com.mts.service.IAdmissionCommiteeMemberService;
 
 		@Autowired
 		IAdmissionCommiteeMemberService service;
-		
 		@PostMapping("/addCommitee")
 		public ResponseEntity<AdmissionCommiteeMember> addCommiteeMember(@RequestBody AdmissionCommiteeMember member) {
 			AdmissionCommiteeMember m1=service.addCommiteeMember(member);
@@ -77,7 +76,7 @@ import com.mts.service.IAdmissionCommiteeMemberService;
 				return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
 			}
 			
-		}//view all coommitee
+		}//view all commitee
 		@GetMapping("/viewAllCommitee")
 		public ResponseEntity<List<AdmissionCommiteeMemberDto>>viewCommiteeMembers(){
 			List<AdmissionCommiteeMemberDto> lst=service.viewAllCommiteeMembers();

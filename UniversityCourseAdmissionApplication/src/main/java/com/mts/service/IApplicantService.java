@@ -2,9 +2,7 @@ package com.mts.service;
 
 import java.util.List;
 
-
-
-import com.mts.DTO.ApplicantDto;
+import com.mts.dto.ApplicantDto;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
 import com.mts.exception.ApplicantNotFoundException;

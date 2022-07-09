@@ -29,7 +29,7 @@ public class AdmissionController {
 
 	@Autowired
 	IAdmissionService service;
-	//Post
+	
 	@PostMapping("/addAdmission")
 	public ResponseEntity<Admission>  addAdmission(@RequestBody Admission admission) {
 		Admission admission1=service.addAdmission(admission);

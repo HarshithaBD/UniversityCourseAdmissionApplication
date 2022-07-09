@@ -13,10 +13,10 @@ import org.modelmapper.ModelMapper;
 @EnableSwagger2
 @SpringBootApplication
 public class UniversityCourseAdmissionApplication {
-	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
+    @Bean
+    ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 	
 
 	public static void main(String[] args) {
@@ -25,10 +25,11 @@ public class UniversityCourseAdmissionApplication {
 
 		System.out.println("connected to database");
 	}
-	@Bean
-    public Docket productApi() {
+
+    @Bean
+    Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-           .apis(RequestHandlerSelectors.basePackage("com.mts")).build();
-     }
+                .apis(RequestHandlerSelectors.basePackage("com.mts")).build();
+    }
 
 }

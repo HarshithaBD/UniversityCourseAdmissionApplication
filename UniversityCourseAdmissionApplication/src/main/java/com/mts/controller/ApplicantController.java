@@ -28,7 +28,7 @@ public class ApplicantController {
 
 	@Autowired
 	IApplicantService service;
-	//
+	
 	@PostMapping("/addApplicant")
 	public ResponseEntity<Applicant> addApplicant(@RequestBody Applicant applicant) {
 		Applicant applicant1=service.addApplicant(applicant);

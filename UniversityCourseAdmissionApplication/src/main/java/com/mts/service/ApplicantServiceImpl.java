@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mts.DTO.ApplicantDto;
+import com.mts.dto.ApplicantDto;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
 import com.mts.exception.ApplicantNotFoundException;

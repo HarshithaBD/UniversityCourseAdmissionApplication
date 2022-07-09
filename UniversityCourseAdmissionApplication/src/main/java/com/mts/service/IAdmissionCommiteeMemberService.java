@@ -2,7 +2,7 @@ package com.mts.service;
 
 import java.util.List;
 
-import com.mts.DTO.AdmissionCommiteeMemberDto;
+import com.mts.dto.AdmissionCommiteeMemberDto;
 import com.mts.entity.Admission;
 import com.mts.entity.AdmissionCommiteeMember;
 import com.mts.entity.AdmissionStatus;

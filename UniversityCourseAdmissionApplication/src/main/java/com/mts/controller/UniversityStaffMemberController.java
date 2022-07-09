@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mts.DTO.StaffMemberDto;
+import com.mts.dto.StaffMemberDto;
 import com.mts.entity.Course;
 import com.mts.entity.UniversityStaffMember;
 import com.mts.exception.CourseNotFoundException;

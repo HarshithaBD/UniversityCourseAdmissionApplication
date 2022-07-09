@@ -1,6 +1,7 @@
 package com.mts.entity;
 
 import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,15 +17,21 @@ import javax.validation.constraints.Pattern;
 public class Applicant {
 	@Id
 	private int applicantId;
+	
 	@NotNull
 	private String applicantName;
+	
 	@Pattern(regexp="[6-9]{1}[0-9]{9}",message ="contact number must have 10 digits")
 	private String mobileNumber;
+	
 	private String applicantDegree;
+	
 	private int applicantGraduationPercent;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(referencedColumnName = "admissionId", name="admissionId")
 	private Admission admission;
+	
 	@Enumerated(EnumType.STRING)
 	private AdmissionStatus status;
 	@Column(name="password", nullable=false)

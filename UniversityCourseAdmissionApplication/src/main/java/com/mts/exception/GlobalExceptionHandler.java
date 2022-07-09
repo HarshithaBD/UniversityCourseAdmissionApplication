@@ -19,7 +19,46 @@ public class GlobalExceptionHandler {
          return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
+	@ExceptionHandler(ApplicantNotFoundException.class)
+    public ResponseEntity<?> resourceNotFoundException(LoginFailedException ex, WebRequest request) 
+	{
+         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+         
+         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+	
+	@ExceptionHandler(ApplicantNotFoundException.class)
+    public ResponseEntity<?> resourceNotFoundException(StaffMemberNotFoundException  ex, WebRequest request) 
+	{
+         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+         
+         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+	
+	@ExceptionHandler(ApplicantNotFoundException.class)
+    public ResponseEntity<?> resourceNotFoundException(CourseNotFoundException ex, WebRequest request) 
+	{
+         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+         
+         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+	
+	@ExceptionHandler(ApplicantNotFoundException.class)
+    public ResponseEntity<?> resourceNotFoundException(AdmissionNotGrantedException ex, WebRequest request) 
+	{
+         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+         
+         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
     
+	@ExceptionHandler(ApplicantNotFoundException.class)
+    public ResponseEntity<?> resourceNotFoundException(AdmissionMemNotFoundException ex, WebRequest request) 
+	{
+         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+         
+         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+	
       @ExceptionHandler(Exception.class) 
       public ResponseEntity<?> globleExcpetionHandler(Exception ex, WebRequest request) { 
     	  

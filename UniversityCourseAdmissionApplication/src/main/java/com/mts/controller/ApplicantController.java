@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mts.DTO.ApplicantDto;
+import com.mts.dto.ApplicantDto;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
 import com.mts.exception.ApplicantNotFoundException;
@@ -28,7 +28,7 @@ public class ApplicantController {
 
 	@Autowired
 	IApplicantService service;
-	
+	//
 	@PostMapping("/addApplicant")
 	public ResponseEntity<Applicant> addApplicant(@RequestBody Applicant applicant) {
 		Applicant applicant1=service.addApplicant(applicant);

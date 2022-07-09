@@ -1,4 +1,4 @@
-package com.mts.DTO;
+package com.mts.dto;
 
 import org.springframework.stereotype.Component;
 

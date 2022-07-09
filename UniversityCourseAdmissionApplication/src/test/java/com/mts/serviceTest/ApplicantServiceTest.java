@@ -1,6 +1,7 @@
 package com.mts.serviceTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -19,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.mts.DTO.ApplicantDto;
+import com.mts.dto.ApplicantDto;
 import com.mts.entity.Admission;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;

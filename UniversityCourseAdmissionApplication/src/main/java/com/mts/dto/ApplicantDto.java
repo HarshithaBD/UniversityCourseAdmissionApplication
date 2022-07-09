@@ -1,4 +1,4 @@
-package com.mts.DTO;
+package com.mts.dto;
 
 import javax.persistence.CascadeType;
 import javax.persistence.EnumType;

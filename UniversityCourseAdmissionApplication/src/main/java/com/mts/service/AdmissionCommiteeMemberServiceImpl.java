@@ -7,7 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mts.DTO.AdmissionCommiteeMemberDto;
+import com.mts.dto.AdmissionCommiteeMemberDto;
 import com.mts.entity.AdmissionCommiteeMember;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;

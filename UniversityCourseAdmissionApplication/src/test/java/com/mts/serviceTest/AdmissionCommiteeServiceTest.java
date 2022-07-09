@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import com.mts.DTO.AdmissionCommiteeMemberDto;
+import com.mts.dto.AdmissionCommiteeMemberDto;
 import com.mts.entity.AdmissionCommiteeMember;
 import com.mts.entity.AdmissionStatus;
 import com.mts.exception.AdmissionMemNotFoundException;

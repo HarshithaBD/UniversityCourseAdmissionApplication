@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mts.DTO.AdmissionCommiteeMemberDto;
+import com.mts.dto.AdmissionCommiteeMemberDto;
 import com.mts.entity.AdmissionCommiteeMember;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
@@ -77,6 +77,8 @@ import com.mts.service.IAdmissionCommiteeMemberService;
 			}
 			
 		}
+		
+    
 		@GetMapping("/viewAllCommitee")
 		public ResponseEntity<List<AdmissionCommiteeMemberDto>>viewCommiteeMembers(){
 			List<AdmissionCommiteeMemberDto> lst=service.viewAllCommiteeMembers();

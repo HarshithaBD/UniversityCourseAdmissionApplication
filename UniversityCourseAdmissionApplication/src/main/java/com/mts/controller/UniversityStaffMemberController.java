@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/HarshithaBD/UniversityCourseAdmissionApplication.git
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mts.dto.StaffMemberDto;

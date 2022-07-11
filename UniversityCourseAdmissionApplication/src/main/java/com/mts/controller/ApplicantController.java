@@ -27,7 +27,7 @@ import com.mts.service.IApplicantService;
 @RestController
 @RequestMapping("/applicant")
 public class ApplicantController {
-	Log logger = LogFactory.getLog(AdmissionCommiteeMemberController.class);
+	Log logger = LogFactory.getLog(ApplicantController.class);
 
 	@Autowired
 	IApplicantService service;

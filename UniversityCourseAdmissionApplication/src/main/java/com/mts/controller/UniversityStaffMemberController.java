@@ -2,6 +2,8 @@ package com.mts.controller;
 
 import java.util.List;
 
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,7 @@ import com.mts.service.IUniversityStaffService;
 @Controller
 @RequestMapping("/staff")
 public class UniversityStaffMemberController {
+	Log logger = LogFactory.getLog(UniversityStaffMemberController.class);
 	@Autowired	
 	IUniversityStaffService service;
 	
@@ -72,6 +75,7 @@ public class UniversityStaffMemberController {
 	@GetMapping("/viewAllStaffs")
 	public ResponseEntity<List<StaffMemberDto>> viewAllStaffs(){
 		List<StaffMemberDto> lst= service.viewAllStaffs();
+		logger.info("get viewAllstaff successfully" );
 		return new ResponseEntity<>(lst, HttpStatus.OK);
 	}
 	

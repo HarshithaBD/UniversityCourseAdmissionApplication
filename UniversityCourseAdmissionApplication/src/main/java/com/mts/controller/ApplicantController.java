@@ -2,6 +2,8 @@ package com.mts.controller;
 
 import java.util.List;
 
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,7 @@ import com.mts.service.IApplicantService;
 @RestController
 @RequestMapping("/applicant")
 public class ApplicantController {
+	Log logger = LogFactory.getLog(AdmissionCommiteeMemberController.class);
 
 	@Autowired
 	IApplicantService service;
@@ -72,7 +75,7 @@ public class ApplicantController {
 	@GetMapping("/viewAllApplicantsByStatus/{status}")
 	public ResponseEntity<List<ApplicantDto>> viewAllApplicantsByStatus(@PathVariable AdmissionStatus status){
 		List<ApplicantDto> lst=service.viewAllApplicantsByStatus(status);
-	
+		logger.info("get viewAllapplicant successfully" );
 		return new ResponseEntity<>(lst,HttpStatus.OK);
 	}
 }

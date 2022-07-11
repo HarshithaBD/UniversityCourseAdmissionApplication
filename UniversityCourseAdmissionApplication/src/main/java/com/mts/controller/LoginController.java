@@ -1,5 +1,7 @@
 package com.mts.controller;
 
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,7 @@ import com.mts.service.ILoginService;
 @RequestMapping("/login")
 
 public class LoginController {
-
+	Log logger = LogFactory.getLog(LoginController.class);
 		@Autowired
 		ILoginService service;
 		

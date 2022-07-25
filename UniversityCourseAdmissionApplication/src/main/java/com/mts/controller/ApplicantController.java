@@ -2,6 +2,7 @@ package com.mts.controller;
 
 import java.util.List;
 
+
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,31 +15,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mts.dto.ApplicantDto;
 import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
 import com.mts.exception.ApplicantNotFoundException;
-
 import com.mts.service.IApplicantService;
 
 @RestController
 @RequestMapping("/applicant")
 public class ApplicantController {
-	Log logger = LogFactory.getLog(ApplicantController.class);
+	
 
 	@Autowired
 	IApplicantService service;
-	
-	@PostMapping("/addApplicant")
+	//add applicant
+	@PostMapping
 	public ResponseEntity<Applicant> addApplicant(@RequestBody Applicant applicant) {
 		Applicant applicant1=service.addApplicant(applicant);
 		return new ResponseEntity<>(applicant1,HttpStatus.OK);
 }
-	
-	@PutMapping("/updateApplicant")
+	//update applicant
+	@PutMapping
 	public ResponseEntity<Object> updateApplicant(@RequestBody Applicant applicant) {
 		try {
 			Applicant applicant1=service.updateApplicant(applicant);
@@ -50,7 +49,8 @@ public class ApplicantController {
 	}
 	}
 	
-	@DeleteMapping("/deleteApplicant")
+	//delete mapping
+	@DeleteMapping
 	public ResponseEntity<String>  deleteApplicant(@RequestBody Applicant applicant)
 	{
 		try {
@@ -61,7 +61,7 @@ public class ApplicantController {
 			return  new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
 		}
 	}
-	
+	//view applicant
 	@GetMapping("/viewApplicant/{applicantId}")
 	public ResponseEntity<Object>  viewApplicant(@PathVariable int applicantId) {
 		try {
@@ -72,10 +72,11 @@ public class ApplicantController {
 	}
 	}
 	
+	//view all applicantstatus
 	@GetMapping("/viewAllApplicantsByStatus/{status}")
 	public ResponseEntity<List<ApplicantDto>> viewAllApplicantsByStatus(@PathVariable AdmissionStatus status){
 		List<ApplicantDto> lst=service.viewAllApplicantsByStatus(status);
-		logger.info("get viewAllapplicant successfully" );
+
 		return new ResponseEntity<>(lst,HttpStatus.OK);
 	}
 }

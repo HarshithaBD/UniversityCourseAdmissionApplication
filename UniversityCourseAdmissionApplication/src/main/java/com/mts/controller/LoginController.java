@@ -22,6 +22,8 @@ public class LoginController {
 		@Autowired
 		ILoginService service;
 		
+		
+		// validate applicant
 		@GetMapping("/validateApplicant")
 		public ResponseEntity<Object> loginAsApplicant(int applicantId, String password) {
 			try {
@@ -31,6 +33,7 @@ public class LoginController {
 			return ResponseEntity.ok().body(e.getMessage());
 		}
 		}
+		//validate commiteemember
 		@GetMapping("/validateCommiteeMember")
 		public ResponseEntity<Object> loginAsAdmissionCommiteeMember(int adminId, String password){
 			
@@ -43,6 +46,7 @@ public class LoginController {
 				
 			}
 		}
+		//validate staffmember
 		
 		@GetMapping("/validateStaffMember")
 		public ResponseEntity<Object> loginAsUniversityStaffMember(int staffId, String password){

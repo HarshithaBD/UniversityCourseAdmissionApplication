@@ -2,11 +2,14 @@ package com.mts.dto;
 
 
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.stereotype.Component;
 
 import com.mts.entity.AdmissionStatus;
 @Component
 public class ApplicantDto {
+	
 	private int applicantId;
 	private String applicantName;
 	private AdmissionStatus status;

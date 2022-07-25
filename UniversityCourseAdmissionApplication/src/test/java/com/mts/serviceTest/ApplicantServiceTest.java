@@ -55,20 +55,6 @@ public class ApplicantServiceTest {
         assertThat(service.addApplicant(c1)).isEqualTo(c1);
     }
 
-	/*
-	 * @Test
-	 * 
-	 * @Order(2) public void testViewApplicant() throws ApplicantNotFoundException {
-	 * when(repo.findById(id)).thenReturn(Optional.of(c1));
-	 * assertEquals(c1DTO,service.viewApplicant(id)); }
-	 * 
-	 * @Test
-	 * 
-	 * @Order(3) public void testViewAllApplicant(){
-	 * when(repo.findByStatus(status)).thenReturn(lst); assertEquals(2,
-	 * service.viewAllApplicantsByStatus(status).size()); }
-	 */
-
     @Test
     @Order(4)
     public void testUpdateApplicant() throws ApplicantNotFoundException {

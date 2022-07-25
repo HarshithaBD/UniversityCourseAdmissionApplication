@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import com.mts.dto.AdmissionCommiteeMemberDto;
 import com.mts.entity.AdmissionCommiteeMember;
 import com.mts.entity.AdmissionStatus;
-import com.mts.entity.Applicant;
 import com.mts.exception.AdmissionMemNotFoundException;
 import com.mts.repository.IAdmissionCommiteeRepository;
 import com.mts.repository.IApplicantRepository;
+import com.mts.service.IAdmissionCommiteeMemberService;
 
 @Service
 public class AdmissionCommiteeMemberServiceImpl implements IAdmissionCommiteeMemberService{

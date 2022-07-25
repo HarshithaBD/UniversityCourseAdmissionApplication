@@ -5,17 +5,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import org.springframework.stereotype.Repository;
-
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.mts.entity.Admission;
 
-public interface IAdmissionRepository extends JpaRepository<Admission,Integer> {
+public interface IAdmissionRepository  extends JpaRepository<Admission, Integer>{
 	
 	List<Admission> findByCourseId(int courseId);
 	List<Admission> findByadmissionDate(LocalDate admissionDate);
-
 }
-

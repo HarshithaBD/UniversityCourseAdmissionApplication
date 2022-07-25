@@ -56,7 +56,7 @@ public class ApplicantController {
 		}
 	}
 
-	// View Applicant by applicantId
+	// View Applicant using applicantId
 	@GetMapping("/{applicantId}")
 	public ResponseEntity<Object> viewApplicant(@PathVariable int applicantId) {
 		try {

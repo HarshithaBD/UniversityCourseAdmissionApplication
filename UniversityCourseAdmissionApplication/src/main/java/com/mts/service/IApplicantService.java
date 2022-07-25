@@ -8,7 +8,6 @@ import com.mts.entity.Applicant;
 import com.mts.exception.ApplicantNotFoundException;
 
 public interface IApplicantService {
- 
 	public Applicant addApplicant(Applicant applicant);
 
 	public Applicant updateApplicant(Applicant applicant) throws ApplicantNotFoundException;
@@ -18,4 +17,5 @@ public interface IApplicantService {
 	public ApplicantDto viewApplicant(int applicantId) throws ApplicantNotFoundException;
 
 	public List<ApplicantDto> viewAllApplicantsByStatus(AdmissionStatus status);
+
 }

@@ -12,6 +12,7 @@ import com.mts.entity.AdmissionStatus;
 import com.mts.entity.Applicant;
 import com.mts.exception.ApplicantNotFoundException;
 import com.mts.repository.IApplicantRepository;
+import com.mts.service.IApplicantService;
 
 @Service
 public class ApplicantServiceImpl implements IApplicantService{
@@ -55,9 +56,9 @@ public class ApplicantServiceImpl implements IApplicantService{
 	}
 
 	@Override
-	public List<ApplicantDto> viewAllApplicantsByStatus(AdmissionStatus status)  {
+	public List<ApplicantDto> viewAllApplicantsByStatus(AdmissionStatus status) {
 		List<Applicant> lst=repo.findByStatus(status);
-		List<ApplicantDto> toDTO=Arrays.asList(mapper.map(lst, ApplicantDto.class));
+		List<ApplicantDto> toDTO=Arrays.asList(mapper.map(lst, ApplicantDto[].class));
 		return toDTO;
 	}
 

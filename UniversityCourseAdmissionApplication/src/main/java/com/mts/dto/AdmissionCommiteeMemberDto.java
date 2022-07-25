@@ -1,11 +1,9 @@
 package com.mts.dto;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class AdmissionCommiteeMemberDto {
-     
+	
 	private int adminId;
+	
 	private String adminName;
 
 	public AdmissionCommiteeMemberDto() {
@@ -38,6 +36,5 @@ public class AdmissionCommiteeMemberDto {
 	public String toString() {
 		return "AdmissionCommiteeMemberDto [adminId=" + adminId + ", adminName=" + adminName + "]";
 	}
-
 
 }

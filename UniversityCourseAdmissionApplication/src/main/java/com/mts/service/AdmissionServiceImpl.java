@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.mts.entity.Admission;
 import com.mts.exception.AdmissionNotGrantedException;
 import com.mts.repository.IAdmissionRepository;
+import com.mts.service.IAdmissionService;
+
 @Service
 public class AdmissionServiceImpl implements IAdmissionService{
 

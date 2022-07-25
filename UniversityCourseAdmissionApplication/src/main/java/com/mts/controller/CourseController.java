@@ -2,8 +2,6 @@ package com.mts.controller;
 
 import java.util.List;
 
-import org.apache.juli.logging.Log;
-import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,43 +22,42 @@ import com.mts.service.ICourseService;
 @RequestMapping("/course")
 public class CourseController {
 
-	Log logger = LogFactory.getLog(CourseController.class);
+	@Autowired
+	ICourseService service;
 
-    @Autowired
-    ICourseService service;
+	// Add Course
+	@PostMapping
+	public ResponseEntity<Course> addCourse(@RequestBody Course course) {
+		Course course1 = service.addCourse(course);
+		return new ResponseEntity<>(course1, HttpStatus.OK);
+	}
 
-    @PostMapping("/addCourse")
-    public ResponseEntity<Course> addCourse(@RequestBody Course course) {
-        Course course1 = service.addCourse(course);
-        return new ResponseEntity<>(course1, HttpStatus.OK);
-    }
+	// Delete course by courseId
+	@DeleteMapping
+	public ResponseEntity<String> removeCourse(@PathVariable int courseId) {
+		try {
+			service.removeCourse(courseId);
+			return ResponseEntity.ok("Deleted..");
+		} catch (CourseNotFoundException e) {
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+		}
+	}
 
-    @DeleteMapping("/removeCourse/{courseId}")
-    public ResponseEntity<String> removeCourse(@PathVariable int courseId) {
-        try {
-            service.removeCourse(courseId);
-            return ResponseEntity.ok("Deleted..");
-        } catch (CourseNotFoundException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
+	// Update Course
+	@PutMapping("/updateCourse")
+	public ResponseEntity<Object> updateCourse(@RequestBody Course course) {
+		try {
+			Course course1 = service.updateCourse(course);
+			return new ResponseEntity<>(course1, HttpStatus.OK);
+		} catch (CourseNotFoundException e) {
+			return ResponseEntity.ok().body(e.getMessage());
+		}
+	}
 
-    @PutMapping("/updateCourse")
-    public ResponseEntity<Object> updateCourse(@RequestBody Course course) {
-        try {
-            Course course1 = service.updateCourse(course);
-            return new ResponseEntity<>(course1, HttpStatus.OK);
-        } catch (CourseNotFoundException e) {
-            return ResponseEntity.ok().body(e.getMessage());
-        }
-    }
-
-    @GetMapping("/viewAllCourses")
-    public ResponseEntity<List<Course>> viewAllCourses() {
-        List<Course> lst = service.viewAllCourses();
-        logger.info("get AllCourses successfully" );
-        return new ResponseEntity<>(lst,HttpStatus.OK);
-
-    }
+	// View All Courses
+	@GetMapping
+	public ResponseEntity<List<Course>> viewAllCourses() {
+		List<Course> lst = service.viewAllCourses();
+		return new ResponseEntity<>(lst, HttpStatus.OK);
+	}
 }
-

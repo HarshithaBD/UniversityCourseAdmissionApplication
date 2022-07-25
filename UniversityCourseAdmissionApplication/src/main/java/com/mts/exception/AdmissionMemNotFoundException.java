@@ -1,6 +1,6 @@
 package com.mts.exception;
 
-public class AdmissionMemNotFoundException extends Exception{
+public class AdmissionMemNotFoundException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 
@@ -10,3 +10,4 @@ public class AdmissionMemNotFoundException extends Exception{
 		super(msg);
 	}
 }
+	

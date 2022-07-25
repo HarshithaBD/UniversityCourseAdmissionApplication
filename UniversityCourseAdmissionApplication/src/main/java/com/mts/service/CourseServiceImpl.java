@@ -2,7 +2,6 @@ package com.mts.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,8 @@ public class CourseServiceImpl implements ICourseService {
 
 	@Override
 	public Course removeCourse(int courseId) throws CourseNotFoundException {
-		Course course = courseRepository.findById(courseId).orElseThrow(()->new CourseNotFoundException("No record present with given id"));
+		Course course = courseRepository.findById(courseId)
+				.orElseThrow(() -> new CourseNotFoundException("No record present with given id"));
 
 		courseRepository.delete(course);
 		return course;
@@ -33,7 +33,8 @@ public class CourseServiceImpl implements ICourseService {
 
 	@Override
 	public Course updateCourse(Course course) throws CourseNotFoundException {
-		Course existingCourse = courseRepository.findById(course.getCourseId()).orElseThrow(()->new CourseNotFoundException("Cann't update. No Course with this Id found!"));
+		Course existingCourse = courseRepository.findById(course.getCourseId())
+				.orElseThrow(() -> new CourseNotFoundException("Cann't update. No Course with this Id found!"));
 
 		existingCourse.setCourseName(course.getCourseName());
 		existingCourse.setCourseDuration(course.getCourseDuration());
@@ -46,7 +47,7 @@ public class CourseServiceImpl implements ICourseService {
 
 	@Override
 	public Course viewCourse(int courseid) throws CourseNotFoundException {
-		return courseRepository.findById(courseid).orElseThrow(()->new CourseNotFoundException("Invalid courseId !"));
+		return courseRepository.findById(courseid).orElseThrow(() -> new CourseNotFoundException("Invalid courseId !"));
 	}
 
 	@Override

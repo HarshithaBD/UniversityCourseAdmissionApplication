@@ -1,18 +1,12 @@
 package com.mts.dto;
 
-import javax.persistence.CascadeType;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToOne;
-
-import org.springframework.stereotype.Component;
-
-import com.mts.entity.Admission;
 import com.mts.entity.AdmissionStatus;
-@Component
+
 public class ApplicantDto {
 	private int applicantId;
+	
 	private String applicantName;
+	
 	private AdmissionStatus status;
 	
 	public ApplicantDto() {

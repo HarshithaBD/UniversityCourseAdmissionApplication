@@ -2,24 +2,29 @@ package com.mts.entity;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Admission {
+	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int admissionId;
+	
 	@NotNull
 	private int courseId;
+	
 	@NotNull
 	private int applicantId;
+	
 	private LocalDate admissionDate;
+	
 	@Enumerated(EnumType.STRING)
 	private AdmissionStatus status;
 

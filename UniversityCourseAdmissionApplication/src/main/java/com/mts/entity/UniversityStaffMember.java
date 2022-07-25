@@ -1,16 +1,20 @@
 package com.mts.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-//@Table(name="UniversityStaffMember")
 public class UniversityStaffMember {
+	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int staffId;
+	
 	private String password;
+	
 	@NotBlank(message = "role is mandatory")
 	private String role;
 	

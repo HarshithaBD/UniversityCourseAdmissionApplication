@@ -23,7 +23,7 @@ public class LoginController {
 		ILoginService service;
 		
 		
-		// validate applicant
+		// validate  using applicant
 		@GetMapping("/validateApplicant")
 		public ResponseEntity<Object> loginAsApplicant(int applicantId, String password) {
 			try {
